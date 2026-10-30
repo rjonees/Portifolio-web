@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Web Inteligente</title>
+
+    <!-- Fonte Inter (precisa de internet; sem ela o navegador usa Arial) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/perfil.css">
+    <script src="JS/perfil.js" defer></script>
+</head>
+
+<body>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <header class="topo">
+        <h1>Currículo Web Inteligente</h1>
+        <p class="subtitulo">Preencha seus dados e veja o currículo ser montado logo abaixo.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- EDITAR PERFIL (formulário) -->
+        <section class="card" id="edicao">
+            <h2 class="rotulo-secao">Editar Perfil</h2>
+
+            <form id="form-perfil">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Ex.: Karine Souza" required>
+                </div>
+
+                <div class="campo">
+                    <label for="profissao">Profissão</label>
+                    <input type="text" id="profissao" placeholder="Ex.: Professora">
+                </div>
+
+                <div class="campo">
+                    <label for="sobre">Sobre você</label>
+                    <textarea id="sobre" placeholder="Conte um pouco sobre sua experiência e objetivos"></textarea>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit" class="botao">Salvar Perfil</button>
+                    <button type="button" class="botao botao-perigo" id="btn-limpar">Limpar Perfil</button>
+                    <button type="button" class="botao botao-discreto" id="btn-tema">
+                        <span id="icone-tema" aria-hidden="true">🌙</span> Alternar Tema
+                    </button>
+                </div>
+
+                <p id="mensagem" role="status"></p>
+            </form>
+        </section>
+
+        <!-- VISUALIZAÇÃO DO CURRÍCULO -->
+        <section class="card" id="visualizacao">
+            <h2 class="rotulo-secao">Visualização do Currículo</h2>
+
+            <div class="perfil-topo">
+                <div class="avatar" id="avatar" aria-hidden="true">?</div>
+                <div>
+                    <h3 id="prev-nome" class="vazio">Seu Nome</h3>
+                    <p id="prev-profissao" class="profissao vazio">Sua Profissão</p>
+                </div>
+            </div>
+
+            <h4 class="rotulo-bloco">Sobre</h4>
+            <p id="prev-sobre" class="sobre vazio">Sua descrição aparecerá aqui.</p>
+
+            <hr>
+            <p class="visita"><span aria-hidden="true">🕒</span> <span id="ultima-visita"></span></p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

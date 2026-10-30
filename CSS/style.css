@@ -1,0 +1,75 @@
+/* ROLAGEM SUAVE (e espaço para o menu fixo não cobrir os títulos) */
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:70px;
+}
+
+/* CORES (troca o azul padrão do Bootstrap) */
+:root{
+    --bs-primary:#2563EB;
+    --bs-primary-rgb:37,99,235;
+    --bs-link-color:#2563EB;
+    --bs-link-hover-color:#1D4ED8;
+}
+
+.btn-primary{
+    --bs-btn-bg:#2563EB;
+    --bs-btn-border-color:#2563EB;
+    --bs-btn-hover-bg:#1D4ED8;
+    --bs-btn-hover-border-color:#1D4ED8;
+    --bs-btn-active-bg:#1E40AF;
+    --bs-btn-active-border-color:#1E40AF;
+}
+
+/* MENU */
+.navbar-escura{
+    background:#0F172A;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+    min-height:calc(100vh - 56px);
+    display:flex;
+    align-items:center;
+    padding:60px 0;
+}
+
+.hero-etiqueta{
+    color:#93C5FD;
+    letter-spacing:0.08em;
+}
+
+.foto-hero{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+/* TEXTO CENTRALIZADO MAIS ESTREITO (Sobre Mim) */
+.texto-largo{
+    max-width:720px;
+}
+
+/* CARTÕES (efeito ao passar o mouse) */
+.card-hover{
+    transition:transform 0.2s, box-shadow 0.2s;
+}
+
+.card-hover:hover{
+    transform:translateY(-4px);
+    box-shadow:0 .75rem 1.5rem rgba(15,23,42,0.15) !important;
+}
+
+/* RODAPÉ */
+.rodape{
+    background:#0F172A;
+}
+
+/* RESPONSIVO (celular) */
+@media (max-width:576px){
+    .foto-hero{
+        width:170px;
+        height:170px;
+    }
+}

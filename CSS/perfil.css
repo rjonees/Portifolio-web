@@ -1,0 +1,338 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ROLAGEM SUAVE */
+html{
+    scroll-behavior:smooth;
+}
+
+/* CORES (tema claro) - mude aqui para trocar as cores do site */
+:root{
+    --fundo:#F1F5F9;
+    --card:#FFFFFF;
+    --texto:#0F172A;
+    --suave:#64748B;
+    --borda:#E2E8F0;
+    --titulo:#2563EB;
+    --botao:#2563EB;
+    --botao-hover:#1D4ED8;
+    --perigo:#DC2626;
+    --ok-fundo:#DCFCE7;
+    --ok-texto:#166534;
+    --aviso-fundo:#FEE2E2;
+    --aviso-texto:#991B1B;
+    --sombra:0 4px 20px rgba(15,23,42,0.07);
+}
+
+/* CORES (tema escuro) - ativado quando o body recebe a classe "escuro" */
+body.escuro{
+    --fundo:#0B1220;
+    --card:#16213A;
+    --texto:#E5EDF8;
+    --suave:#94A3B8;
+    --borda:#2B3A5A;
+    --titulo:#7FB0FF;
+    --botao:#3B74E0;
+    --botao-hover:#2F63C8;
+    --perigo:#F87171;
+    --ok-fundo:#14352A;
+    --ok-texto:#86EFAC;
+    --aviso-fundo:#3B1A1F;
+    --aviso-texto:#FCA5A5;
+    --sombra:0 4px 20px rgba(0,0,0,0.35);
+}
+
+/* TIPOGRAFIA E FUNDO */
+body{
+    font-family: "Inter", Arial, sans-serif;
+    background:var(--fundo);
+    color:var(--texto);
+    line-height:1.6;
+    transition:background 0.3s, color 0.3s;
+}
+
+/* TÍTULO DA PÁGINA */
+.topo{
+    text-align:center;
+    padding:48px 20px 8px;
+}
+
+.topo h1{
+    font-size:2.2rem;
+    letter-spacing:-0.5px;
+    color:var(--titulo);
+}
+
+.subtitulo{
+    color:var(--suave);
+    margin-top:6px;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:760px;
+    margin:0 auto;
+    padding:28px 0 70px;
+}
+
+/* CARTÕES */
+.card{
+    background:var(--card);
+    border:1px solid var(--borda);
+    border-radius:16px;
+    box-shadow:var(--sombra);
+    padding:34px;
+    margin-bottom:28px;
+    scroll-margin-top:20px;
+    transition:background 0.3s, border-color 0.3s;
+}
+
+/* RÓTULO DE SEÇÃO (Editar Perfil / Visualização) */
+.rotulo-secao{
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--suave);
+    margin-bottom:22px;
+}
+
+/* FORMULÁRIO */
+form{
+    display:grid;
+    gap:18px;
+}
+
+.campo{
+    display:grid;
+    gap:6px;
+}
+
+label{
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--suave);
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px 14px;
+    font-family: inherit;
+    font-size:1rem;
+    color:var(--texto);
+    background:var(--card);
+    border:1px solid var(--borda);
+    border-radius:10px;
+    transition:border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:var(--suave);
+    opacity:0.7;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--titulo);
+    box-shadow:0 0 0 3px rgba(37,99,235,0.18);
+}
+
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+/* BOTÕES */
+.botoes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:4px;
+}
+
+.botao{
+    padding:12px 22px;
+    font-family: inherit;
+    font-size:0.95rem;
+    font-weight:600;
+    color:#FFFFFF;
+    background:var(--botao);
+    border:2px solid var(--botao);
+    border-radius:10px;
+    cursor:pointer;                 /* seta vira mãozinha */
+    transition:background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.botao:hover{
+    background:var(--botao-hover);
+    border-color:var(--botao-hover);
+}
+
+.botao:focus-visible{
+    outline:3px solid var(--titulo);
+    outline-offset:2px;
+}
+
+/* botão de excluir: contorno vermelho */
+.botao-perigo{
+    background:transparent;
+    color:var(--perigo);
+    border-color:var(--perigo);
+}
+
+.botao-perigo:hover{
+    background:var(--perigo);
+    border-color:var(--perigo);
+    color:#FFFFFF;
+}
+
+/* botão de tema: discreto, fica à direita */
+.botao-discreto{
+    background:transparent;
+    color:var(--texto);
+    border-color:var(--borda);
+    margin-left:auto;
+}
+
+.botao-discreto:hover{
+    background:transparent;
+    border-color:var(--titulo);
+    color:var(--titulo);
+}
+
+/* MENSAGEM DE STATUS (etiqueta) */
+#mensagem{
+    justify-self:start;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:0.9rem;
+    font-weight:600;
+}
+
+#mensagem:empty{
+    display:none;
+}
+
+#mensagem.ok{
+    background:var(--ok-fundo);
+    color:var(--ok-texto);
+}
+
+#mensagem.aviso{
+    background:var(--aviso-fundo);
+    color:var(--aviso-texto);
+}
+
+/* VISUALIZAÇÃO DO CURRÍCULO */
+#visualizacao{
+    border-top:6px solid var(--botao);   /* faixa colorida no topo */
+}
+
+.perfil-topo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:24px;
+}
+
+.avatar{
+    width:72px;
+    height:72px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--botao);
+    color:#FFFFFF;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+#prev-nome{
+    font-size:1.8rem;
+    line-height:1.2;
+}
+
+.profissao{
+    color:var(--titulo);
+    font-weight:600;
+}
+
+.rotulo-bloco{
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--suave);
+    margin-bottom:6px;
+}
+
+.sobre{
+    white-space:pre-wrap;           /* mantém as quebras de linha digitadas */
+}
+
+/* texto de exemplo (campo ainda vazio) */
+.vazio{
+    color:var(--suave);
+    font-style:italic;
+    font-weight:400;
+}
+
+hr{
+    border:none;
+    border-top:1px solid var(--borda);
+    margin:24px 0 14px;
+}
+
+/* ÚLTIMA VISITA */
+.visita{
+    font-size:0.9rem;
+    color:var(--suave);
+}
+
+/* DESTAQUE DA VISUALIZAÇÃO APÓS SALVAR */
+@keyframes destaque{
+    from{ box-shadow:0 0 0 6px rgba(37,99,235,0.35); }
+    to{ box-shadow:var(--sombra); }
+}
+
+.card.novo{
+    animation:destaque 1.4s ease-out 0.3s backwards;
+}
+
+@media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .card.novo{ animation:none; }
+}
+
+/* RESPONSIVO (celular) */
+@media (max-width:600px){
+    .topo h1{
+        font-size:1.7rem;
+    }
+
+    .card{
+        padding:24px 20px;
+    }
+
+    .botao{
+        flex:1 1 100%;
+    }
+
+    .botao-discreto{
+        margin-left:0;
+    }
+
+    .perfil-topo{
+        flex-direction:column;
+        text-align:center;
+    }
+}
